@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+html{
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgb(176, 175, 238), rgb(41, 58, 105));
+}
+
+body    {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  position: relative;
+  margin: 0px;
+  height: 100vh;
+  box-sizing: border-box;
+  justify-content: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.image {
+  width: 500px;
+  height: 350px;
+  margin: 150px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+  place-items: center;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 4.3s;
+}
+
+.image span {
+  position: absolute;
+  background: url(https://elements-cover-images-0.imgix.net/355fe047-c986-4914-aaec-21073b2c3d6b?auto=compress%2Cformat&fit=max&w=1170&s=e6a96c1fb778dfb7cd2ef708385f4caf) no-repeat center/cover;
+  inset: 0;
+  transition: 0.6s ease-in-out;
+}
+span:nth-child(1) {
+  clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
+  transition-delay: 0;
+}
+span:nth-child(2) {
+  clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+  transition-delay: 0.25s;
+}
+span:nth-child(3) {
+  clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
+  transition-delay: 0.5s;
+}
+span:nth-child(4) {
+  clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+  transition-delay: 0.75s;
+}
+/* Hover Effects */
+.image:hover span:nth-child(1) {
+  transform: translate(-40px, -60px) rotate(-15deg);
+}
+.image:hover span:nth-child(2) {
+  transform: translate(40px, -100px) rotate(25deg);
+}
+.image:hover span:nth-child(3) {
+  transform: translate(-40px, 80px) rotate(15deg);
+}
+.image:hover span:nth-child(4) {
+  transform: translate(40px, 80px) rotate(-15deg);
+}
+
+
+.typewriter {
+  color: #ffd900;
+  font-family: monospace;
+  overflow: hidden; 
+  border-right: .25em solid orange; 
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+    typing 5.5s steps(50, end),
+    blink-caret 1s step-end infinite;
+}
+
+
+#middle{
+  display: inline-table;
+  text-align: center;
+  position: relative;
+  padding-top: 80px;
+  transform: translateY(120px, 50%);
+}
+
+#header {
+  position: relative;
+}
+#title{
+  position: relative;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: -5px;
+  font-size: 3vw;
+  text-align: center;
+  color:rgb(255, 255, 255);
+  bottom: 15vw;
+  opacity: 10;
+  animation: drop 1.8s forwards;
+
+}
+
+#bottom{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  bottom: -20%;
+  right: 50%;
+  transform: translate(50%);
+  width: 60%;
+  opacity: 0;
+  animation: drop 1.2s forwards;
+  animation-delay: 3s;
+}
+
+#bottomCenter {
+  margin: 3.5vw 0;
+  width: 18vw;
+  height: 18vw;
+  display: flex;
+  pointer-events: auto;
+ 
+  
+}
+
+
+#TOP    {
+  margin: 0.5vw 0;
+  width: 17vw;
+  display: block;
+  transform: translateX(1.5%);
+}
+
+#left  {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+
+#topLeft  {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  pointer-events: none;
+  left: -30vw;
+  position: relative;
+  opacity: 0;
+  animation: leftSlide 1s forwards;
+  animation-delay: 0.8s;
+}
+
+#bottomLeft   {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  pointer-events: none;
+  left: -30vw;
+  position: relative;
+  opacity: 0;
+  animation: leftSlide 1s forwards;
+  animation-delay: 1.8s;
+}
+
+
+#bottomCenter:hover, #topLeft:hover, #bottomLeft:hover, #topRight:hover, #bottomRight:hover {
+  transform: scale(1.09);
+}
+
+#topLeftFrame, #bottomLeftFrame, #topRightFrame, #bottomRightFrame {
+  width: 21vw;
+  height: 19vw;
+  filter: hue-rotate(0deg) saturate(0);
+  display: block;
+  z-index: 2;
+}
+
+#topLeft:hover > #topLeftFrame, #bottomLeft:hover > #bottomLeftFrame, #topRight:hover > #topRightFrame, #bottomRight:hover > #bottomRightFrame {
+  transition: 0.75s;
+  filter: hue-rotate(-15deg) saturate(2);
+}
+
+#topLeftRecipe, #bottomLeftRecipe, #topRightRecipe, #bottomRightRecipe {
+  position: absolute;
+  width: 18vw;
+  height: 18vw;
+  display: inline;
+  object-fit: cover;
+  pointer-events: auto;
+  box-shadow: 0 0 2vw white;
+}
+
+#bottomCenterRecipe  {
+  position: absolute;
+  width: 18vw;
+  height: 18vw;
+  display: inline;
+  object-fit: cover;
+  pointer-events: auto;
+  
+}
+
+#topLeft:hover > #topLeftRecipe, #bottomLeft:hover > #bottomLeftRecipe, #topRight:hover > #topRightRecipe, #bottomRight:hover > #bottomRightRecipe {
+  box-shadow: 0 0 4vw white;
+  transition-duration: 1s;
+}
+
+#topLeftOverlay, #bottomLeftOverlay, #topRightOverlay, #bottomRightOverlay, #bottomCenterOverlay {
+  position: absolute;
+  width: 18vw;
+  height: 18vw;
+  background: rgba(0, 0, 0, 0);
+  color:#ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Courgette', cursive;
+  opacity: 0;
+  transition: 0.75s;
+  pointer-events: auto;
+  text-decoration: none;
+}
+ 
+
+
+#topLeftOverlay > *, #bottomLeftOverlay > *, #topRightOverlay > *, #bottomRightOverlay > *, #bottomCenterOverlay > * {
+  transform: translateY(1.5vw);
+  transition: transform 0.5s;
+}
+
+#topLeftOverlay:hover, #bottomLeftOverlay:hover, #topRightOverlay:hover, #bottomRightOverlay:hover{
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.65);
+
+}
+
+#topLeftOverlay:hover > *, #bottomLeftOverlay:hover > *, #topRightOverlay:hover > *, #bottomRightOverlay:hover > *, #bottomCenterOverlay:hover > * {
+  transform: translateY(0.5vw);
+}
+
+#topLeftHoverTitle, #bottomLeftHoverTitle, #topRightHoverTitle, #bottomRightHoverTitle  {
+  display: block;
+  font-size: 1.6vw;
+  text-decoration: underline;
+  margin-top: 0.4vh;
+}
+
+#topLeftHoverDescription, #bottomLeftHoverDescription, #topRightHoverDescription, #bottomRightHoverDescription {
+  font-size: 1vw;
+  text-align: center;
+  margin-top: 1vh;
+}
+
+#right   {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+#topRight    {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  pointer-events: none;
+  right: -30vw;
+  position: relative;
+  opacity: 0;
+  animation: rightSlide 1s forwards;
+  animation-delay: 0.8s;
+}
+#bottomRight    {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  pointer-events: none;
+  right: -30vw;
+  position: relative;
+  opacity: 0;
+  animation: rightSlide 1s forwards;
+  animation-delay: 1.8s;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+@keyframes drop {
+  100% {bottom: 0};
+  from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes leftSlide  {
+  100% {left:0};
+  from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes rightSlide {
+  100% {right:0};
+  from {opacity:0} to {opacity:1};
+}
+@keyframes appear {
+  from {opacity: 0} to {opacity: 1};
+
+}
