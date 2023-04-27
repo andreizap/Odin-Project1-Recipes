@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Noto+Serif+JP&display=swap');
+
+
 html{
   height: 100%;
   margin: 0;
@@ -10,16 +14,17 @@ body    {
   background: linear-gradient(180deg, rgb(176, 175, 238), rgb(41, 58, 105)) fixed;
 }
 
-.imageLink {
+.Link {
   margin-left: 60%;
   margin-top: -35%;
   width: 280px;
   height: 280px;
- 
-}
 
+}
 .image {
-  float: right;
+  float:right;
+  object-fit: cover;
+  z-index: 2;
   margin-left: 60%;
   margin-top: -115%;
   width: 280px;
@@ -28,9 +33,9 @@ body    {
   overflow: hidden;
   border: 1px solid rgb(255, 255, 255);
   box-shadow: 0 0 0px black;
-  animation: expand 1s forwards, Down 0.75s 0.5s forwards, Up 1s 0.9s forwards;
-    transform: scale(0.01);
-    transition: 0.3s;
+  animation: expand 1s forwards, Up 1s 0.9s forwards;
+  transform: scale(0.01);
+  transition: 0.3s;
 }
 
 img:hover {
@@ -55,14 +60,104 @@ img:hover {
   opacity: .9;
 }
 
+.content {
+  position: absolute;
+}
+
+.recipe {
+  position: absolute;
+  left: 30%;
+  transform: translateX(-50%);
+  margin-top: -16.5em;
+  font-size: 2em;
+  text-shadow: 2px 2px black;
+  color: #ffc559;
+  font-family:'Carter One';
+  font-weight: normal;
+  opacity: 0;
+  animation: fadeIn 1s 1s forwards;
+  animation-delay: 0.5s;
+
+}
+
+.ingredientsContainer {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    padding: 15px;
+    margin-top: -20em;
+}
+
+.ingredientsText {
+    position: absolute;
+    margin-right: 15em;
+    font-size: 2em;
+    font-family: 'Sigmar';
+    color:rgb(242, 255, 54);
+    top: -1.85em;
+    opacity: 0;
+    animation: fadeIn 1s 1s forwards;
+}
+
+.ingredientsList {
+    color: white;
+    width: 90%;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    margin-top: 0.5em;
+    margin-right: 4.5em;
+    background:linear-gradient(0deg, rgba(145, 145, 145, 0.3), rgba(255, 0, 0, 0.3)), url(https://png.pngtree.com/thumb_back/fh260/back_our/20190617/ourmid/pngtree-chinese-food-traditional-cuisine-coupon-vector-background-image_125618.jpg); 
+    opacity: 0;
+    animation: fadeIn 1s 2s forwards;
+}
+
+.instructionsContainer {
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+  padding: 15px;
+  margin-top: -38em;
+
+}
+
+.instructionsText {
+  position: absolute;
+  margin-right: 15em;
+  font-size: 2em;
+  font-family: 'Sigmar';
+  color:rgb(242, 255, 54);
+  top: 19.35em;
+  opacity: 0;
+  animation: fadeIn 1s 1s forwards;
+}
+
+.instructionsList {
+  position:relative;
+  top: 28em;
+  color: white;
+  width: 90%;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  margin-right: 4.5em;
+  background:linear-gradient(0deg, rgba(145, 145, 145, 0.3), rgba(255, 0, 0, 0.3)), url(https://png.pngtree.com/thumb_back/fh260/back_our/20190617/ourmid/pngtree-chinese-food-traditional-cuisine-coupon-vector-background-image_125618.jpg);
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 1s 2s forwards;
+}
 
 @keyframes expand {
   from {transform: scale(0.01)} to {transform: scale(1)};
 }
-@keyframes Down {
-  100% {top: 19em};
-}
 @keyframes Up {
   100% {top: -7em};
   from {box-shadow: 0 0 0px black} to {box-shadow: 0 0 2.5em black};
+}
+@keyframes fadeIn {
+  from {opacity: 0} to {opacity: 1};
 }
