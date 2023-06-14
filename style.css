@@ -6,7 +6,7 @@ html{
 }
 
 body    {
-  display: grid;
+  display: flex;
   grid-template-columns: 30% 40% 30%;
   position: relative;
   margin: 0px;
